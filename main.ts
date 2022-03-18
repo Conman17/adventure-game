@@ -281,6 +281,14 @@ basic.forever(function () {
         led.plot(4, 1)
         led.plot(4, 2)
         led.plot(4, 3)
+        if (Character.get(LedSpriteProperty.Y) == 4) {
+            if (Character.get(LedSpriteProperty.X) == 1) {
+                game.gameOver()
+            }
+            if (Character.get(LetSpriteProperty.X) == 3) {
+                game.gameOver()
+            }
+        }
         if (Actual_egg == 1) {
             Variable = 32
             basic.pause(500)
