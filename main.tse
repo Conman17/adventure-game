@@ -295,6 +295,7 @@ basic.forever(function () {
             basic.showString("CONGRADULATIONS!!!")
             basic.pause(500)
             Variable = 0
+            Actual_egg = 0
             Character.set(LedSpriteProperty.Y, 2)
             Character.set(LedSpriteProperty.X, 2)
         }
