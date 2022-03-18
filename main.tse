@@ -296,6 +296,7 @@ basic.forever(function () {
             basic.pause(500)
             Variable = 0
             Actual_egg = 0
+            String = 0
             Character.set(LedSpriteProperty.Y, 2)
             Character.set(LedSpriteProperty.X, 2)
         }
