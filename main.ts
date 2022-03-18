@@ -285,7 +285,7 @@ basic.forever(function () {
             if (Character.get(LedSpriteProperty.X) == 1) {
                 game.gameOver()
             }
-            if (Character.get(LetSpriteProperty.X) == 3) {
+            if (Character.get(LedSpriteProperty.X) == 3) {
                 game.gameOver()
             }
         }
