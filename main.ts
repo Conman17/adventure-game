@@ -123,7 +123,7 @@ basic.forever(function () {
         if (string == 2) {
             Variable = 92
             basic.pause(500)
-            Character.set(LedSpriteProperty.Y, 3)
+            Character.set(LedSpriteProperty.X, 3)
         }
         if (Character.get(LedSpriteProperty.X) == 0) {
             if (Character.get(LedSpriteProperty.Y) == 1) {
@@ -293,7 +293,7 @@ basic.forever(function () {
             basic.showString("CONGRADULATIONS!!!")
             basic.pause(500)
             Character.set(LedSpriteProperty.X, 2)
-            Character.set(LedSpriteProperty.X, 2)
+            Character.set(LedSpriteProperty.Y, 2)
             Variable = 0
             Actual_egg = 0
         }
