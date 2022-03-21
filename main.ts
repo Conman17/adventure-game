@@ -28,6 +28,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     Character.change(LedSpriteProperty.Y, -1)
 })
 let string = 0
+let Room_5 = 0
+let Room_4 = 0
+let Room_3 = 0
 let Variable = 0
 let Point = 0
 let Character: game.LedSprite = null
@@ -42,6 +45,9 @@ basic.forever(function () {
         Character.set(LedSpriteProperty.Y, 2)
         Variable = 0
         Point = 0
+        Room_3 = 0
+        Room_4 = 0
+        Room_5 = 0
         if (string == 1) {
             string = 2
         } else {
@@ -117,8 +123,7 @@ basic.forever(function () {
         if (string == 2) {
             Variable = 92
             basic.pause(500)
-            Character.set(LedSpriteProperty.X, 2)
-            Character.set(LedSpriteProperty.Y, 2)
+            Character.set(LedSpriteProperty.Y, 3)
         }
         if (Character.get(LedSpriteProperty.X) == 0) {
             if (Character.get(LedSpriteProperty.Y) == 1) {
@@ -237,6 +242,21 @@ basic.forever(function () {
                 }
             }
         }
+        if (Character.get(LedSpriteProperty.Y) == 4) {
+            if (Character.get(LedSpriteProperty.X) == 3) {
+                Character.set(LedSpriteProperty.Y, 1)
+                Variable = 1
+            }
+        }
+        if (Character.get(LedSpriteProperty.X) == 1) {
+            if (Character.get(LedSpriteProperty.Y) == 2) {
+                if (Room_3 == 0) {
+                    Room_3 += 1
+                    Point += 1
+                    basic.showIcon(IconNames.Yes)
+                }
+            }
+        }
         if (Point == 2) {
             if (Character.get(LedSpriteProperty.X) == 1) {
                 if (Character.get(LedSpriteProperty.Y) == 4) {
@@ -247,20 +267,6 @@ basic.forever(function () {
             if (Character.get(LedSpriteProperty.X) == 1) {
                 if (Character.get(LedSpriteProperty.Y) == 4) {
                     game.gameOver()
-                }
-            }
-        }
-        if (Character.get(LedSpriteProperty.Y) == 4) {
-            if (Character.get(LedSpriteProperty.X) == 3) {
-                Character.set(LedSpriteProperty.Y, 1)
-                Variable = 1
-            }
-        }
-        if (Character.get(LedSpriteProperty.X) == 1) {
-            if (Character.get(LedSpriteProperty.Y) == 2) {
-                if (Point == 0) {
-                    Point += 1
-                    basic.showIcon(IconNames.Yes)
                 }
             }
         }
@@ -281,20 +287,15 @@ basic.forever(function () {
         led.plot(4, 1)
         led.plot(4, 2)
         led.plot(4, 3)
-        if (Character.get(LedSpriteProperty.Y) == 4) {
-            if (Character.get(LedSpriteProperty.X) == 1) {
-                game.gameOver()
-            }
-            if (Character.get(LedSpriteProperty.X) == 3) {
-                game.gameOver()
-            }
-        }
         if (Actual_egg == 1) {
             Variable = 32
             basic.pause(500)
             basic.showString("CONGRADULATIONS!!!")
             basic.pause(500)
+            Character.set(LedSpriteProperty.X, 2)
+            Character.set(LedSpriteProperty.X, 2)
             Variable = 0
+            Actual_egg = 0
         }
         if (Character.get(LedSpriteProperty.Y) == 0) {
             if (Character.get(LedSpriteProperty.X) == 0) {
@@ -321,7 +322,8 @@ basic.forever(function () {
         }
         if (Character.get(LedSpriteProperty.X) == 3) {
             if (Character.get(LedSpriteProperty.Y) == 1) {
-                if (Point == 1) {
+                if (Room_4 == 0) {
+                    Room_4 += 1
                     Point += 1
                     basic.showIcon(IconNames.Yes)
                 }
@@ -359,8 +361,9 @@ basic.forever(function () {
         }
         if (Character.get(LedSpriteProperty.X) == 2) {
             if (Character.get(LedSpriteProperty.Y) == 3) {
-                if (Point == 2) {
+                if (Room_5 == 0) {
                     basic.showIcon(IconNames.Yes)
+                    Room_5 += 1
                     Point += 1
                 }
             }
@@ -509,8 +512,8 @@ basic.forever(function () {
         if (Character.get(LedSpriteProperty.X) == 0) {
             if (Character.get(LedSpriteProperty.Y) == 2) {
                 Variable = 0
-                Character.set(LedSpriteProperty.X, 2)
                 Character.set(LedSpriteProperty.Y, 2)
+                Character.set(LedSpriteProperty.X, 2)
             }
         }
         if (Character.get(LedSpriteProperty.X) == 2) {
