@@ -297,6 +297,14 @@ basic.forever(function () {
             Variable = 0
             Actual_egg = 0
         }
+        if (Character.get(LedSpriteProperty.Y) == 4) {
+            if (Character.get(LedSpriteProperty.X) == 1) {
+                game.gameOver()
+            }
+            if (Character.get(LedSpriteProperty.X) == 3) {
+                game.gameOver()
+            }
+        }
         if (Character.get(LedSpriteProperty.Y) == 0) {
             if (Character.get(LedSpriteProperty.X) == 0) {
                 game.gameOver()
